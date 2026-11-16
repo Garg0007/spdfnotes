@@ -1,0 +1,1205 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ज्ञानू AI स्मार्ट ई-लाइब्रेरी एवं पीडीएफ नोट्स | कक्षा 10 विज्ञान (RBSE) - ऋषि सर</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;500;600;700;800&family=Poppins:wght@500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --primary: #1e3a8a;
+    --primary-mid: #1d4ed8;
+    --primary-light: #3b82f6;
+    --accent: #f97316;
+    --accent-dark: #ea580c;
+    --success: #16a34a;
+    --success-bg: #dcfce7;
+    --purple: #7c3aed;
+    --bg-main: #f0f4f8;
+    --card-bg: #ffffff;
+    --text-main: #0f172a;
+    --text-muted: #475569;
+    --border-color: #cbd5e1;
+    --reader-grad: linear-gradient(135deg, #0f172a 0%, #1e3a8a 60%, #1d4ed8 100%);
+    --header-grad: linear-gradient(135deg, #1e3a8a 0%, #2563eb 55%, #f97316 100%);
+    --shadow-md: 0 8px 24px rgba(15, 23, 42, 0.08);
+    --shadow-lg: 0 14px 34px rgba(30, 58, 138, 0.16);
+  }
+
+  body.dark-mode {
+    --bg-main: #0b1120;
+    --card-bg: #1e293b;
+    --text-main: #f8fafc;
+    --text-muted: #94a3b8;
+    --border-color: #334155;
+    --reader-grad: linear-gradient(135deg, #020617 0%, #0f172a 60%, #1e3a8a 100%);
+    --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.35);
+    --shadow-lg: 0 14px 34px rgba(0, 0, 0, 0.5);
+  }
+
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Noto Sans Devanagari', 'Poppins', sans-serif;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  body {
+    background-color: var(--bg-main);
+    color: var(--text-main);
+    line-height: 1.6;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    padding-bottom: 40px;
+  }
+
+  .app-container {
+    max-width: 1120px;
+    margin: 0 auto;
+    padding: 12px 14px;
+  }
+
+  /* Header Section */
+  .top-header {
+    background: var(--header-grad);
+    color: #ffffff;
+    border-radius: 20px;
+    padding: 18px 22px;
+    box-shadow: var(--shadow-lg);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 14px;
+    flex-wrap: wrap;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .brand-left {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+
+  .owl-logo {
+    width: 60px;
+    height: 60px;
+    background: #ffffff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.1rem;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.25);
+    border: 3px solid #fde047;
+    flex-shrink: 0;
+  }
+
+  .brand-titles h1 {
+    font-size: 1.45rem;
+    font-weight: 800;
+    letter-spacing: 0.2px;
+    line-height: 1.25;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.25);
+  }
+
+  .brand-titles p {
+    font-size: 0.9rem;
+    opacity: 0.95;
+    font-weight: 500;
+    margin-top: 2px;
+  }
+
+  .creator-pill {
+    display: inline-block;
+    background: rgba(255,255,255,0.2);
+    backdrop-filter: blur(6px);
+    padding: 3px 11px;
+    border-radius: 999px;
+    font-size: 0.78rem;
+    font-weight: 700;
+    margin-top: 5px;
+    border: 1px solid rgba(255,255,255,0.35);
+  }
+
+  .header-actions {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+
+  .action-btn {
+    background: rgba(255, 255, 255, 0.18);
+    color: #fff;
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    padding: 8px 13px;
+    border-radius: 12px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    text-decoration: none;
+    transition: all 0.2s ease;
+  }
+
+  .action-btn:hover {
+    background: rgba(255, 255, 255, 0.3);
+    transform: translateY(-1px);
+  }
+
+  /* Progress & Stats Bar */
+  .stats-dashboard {
+    background: var(--card-bg);
+    border-radius: 16px;
+    padding: 14px 18px;
+    margin-top: 14px;
+    box-shadow: var(--shadow-md);
+    border: 1px solid var(--border-color);
+  }
+
+  .stats-top-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 10px;
+  }
+
+  .stat-badges {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+
+  .stat-chip {
+    padding: 5px 12px;
+    border-radius: 10px;
+    font-size: 0.86rem;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+
+  .chip-total { background: rgba(59, 130, 246, 0.12); color: #2563eb; }
+  .chip-done { background: rgba(22, 163, 74, 0.14); color: #16a34a; }
+  .chip-rem { background: rgba(249, 115, 22, 0.14); color: #ea580c; }
+
+  body.dark-mode .chip-total { color: #60a5fa; }
+  body.dark-mode .chip-done { color: #4ade80; }
+  body.dark-mode .chip-rem { color: #fb923c; }
+
+  .progress-track {
+    width: 100%;
+    height: 10px;
+    background: var(--bg-main);
+    border-radius: 999px;
+    overflow: hidden;
+    border: 1px solid var(--border-color);
+  }
+
+  .progress-fill {
+    height: 100%;
+    width: 0%;
+    background: linear-gradient(90deg, #16a34a, #22c55e, #f97316);
+    border-radius: 999px;
+    transition: width 0.4s ease;
+  }
+
+  /* Smart Reader + Quick Cheat-Sheet Grid */
+  .reader-grid {
+    display: grid;
+    grid-template-columns: 1.45fr 1fr;
+    gap: 16px;
+    margin-top: 16px;
+  }
+
+  @media (max-width: 880px) {
+    .reader-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .pdf-viewer-card {
+    background: var(--reader-grad);
+    color: #ffffff;
+    border-radius: 20px;
+    padding: 18px;
+    box-shadow: var(--shadow-lg);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .viewer-top-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-bottom: 10px;
+  }
+
+  .live-reader-badge {
+    background: rgba(249, 115, 22, 0.25);
+    border: 1px solid #f97316;
+    color: #fed7aa;
+    padding: 4px 12px;
+    border-radius: 999px;
+    font-size: 0.78rem;
+    font-weight: 700;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .doc-mode-tabs {
+    display: flex;
+    gap: 6px;
+    flex-wrap: wrap;
+  }
+
+  .doc-mode-btn {
+    background: rgba(255,255,255,0.14);
+    color: #fff;
+    border: 1px solid rgba(255,255,255,0.28);
+    padding: 5px 11px;
+    border-radius: 9px;
+    font-size: 0.78rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+
+  .doc-mode-btn.active {
+    background: #f97316;
+    border-color: #f97316;
+    color: #fff;
+  }
+
+  .viewer-title-area {
+    margin-bottom: 10px;
+  }
+
+  .viewer-ch-tag {
+    font-size: 0.82rem;
+    color: #93c5fd;
+    font-weight: 700;
+  }
+
+  .viewer-main-title {
+    font-size: 1.28rem;
+    font-weight: 800;
+    color: #fff;
+    line-height: 1.3;
+    margin-top: 2px;
+  }
+
+  .pdf-frame-container {
+    width: 100%;
+    height: 430px;
+    background: #0f172a;
+    border-radius: 14px;
+    overflow: hidden;
+    border: 2px solid rgba(255,255,255,0.18);
+    position: relative;
+  }
+
+  .pdf-iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+  }
+
+  .viewer-controls {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin-top: 12px;
+  }
+
+  .v-btn {
+    flex: 1;
+    min-width: 125px;
+    padding: 10px 12px;
+    border-radius: 11px;
+    font-size: 0.83rem;
+    font-weight: 700;
+    border: none;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    text-decoration: none;
+    transition: all 0.2s;
+  }
+
+  .btn-mark-read { background: #f97316; color: #fff; }
+  .btn-mark-read:hover { background: #ea580c; }
+
+  .btn-full-tab {
+    background: rgba(255,255,255,0.16);
+    color: #fff;
+    border: 1px solid rgba(255,255,255,0.3);
+  }
+  .btn-full-tab:hover { background: rgba(255,255,255,0.26); }
+
+  .btn-dl-pdf { background: #16a34a; color: #fff; }
+  .btn-dl-pdf:hover { background: #15803d; }
+
+  /* Right Side: 1-Minute Revision Cheat Sheet */
+  .cheatsheet-card {
+    background: var(--card-bg);
+    border-radius: 20px;
+    padding: 20px;
+    box-shadow: var(--shadow-md);
+    border: 2px solid rgba(59, 130, 246, 0.25);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .cs-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    border-bottom: 2px dashed var(--border-color);
+    padding-bottom: 10px;
+    margin-bottom: 12px;
+  }
+
+  .cs-header h3 {
+    font-size: 1.08rem;
+    font-weight: 800;
+    color: var(--primary-light);
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .cs-badge {
+    background: #fef3c7;
+    color: #b45309;
+    font-size: 0.72rem;
+    font-weight: 800;
+    padding: 3px 9px;
+    border-radius: 999px;
+    border: 1px solid #fde68a;
+  }
+
+  .cs-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .cs-list li {
+    font-size: 0.92rem;
+    background: var(--bg-main);
+    padding: 10px 12px;
+    border-radius: 11px;
+    border-left: 4px solid var(--accent);
+    font-weight: 500;
+  }
+
+  .cs-formula-box {
+    margin-top: 14px;
+    background: linear-gradient(135deg, rgba(234, 179, 8, 0.12), rgba(249, 115, 22, 0.12));
+    border: 1px solid rgba(249, 115, 22, 0.35);
+    border-radius: 12px;
+    padding: 12px;
+  }
+
+  .cs-formula-title {
+    font-size: 0.8rem;
+    font-weight: 800;
+    color: var(--accent-dark);
+    margin-bottom: 4px;
+  }
+
+  .cs-formula-text {
+    font-size: 0.92rem;
+    font-weight: 700;
+    color: var(--text-main);
+  }
+
+  /* Filter & Search Controls */
+  .library-controls {
+    margin-top: 22px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+
+  .filter-tabs {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+
+  .filter-tab {
+    background: var(--card-bg);
+    color: var(--text-main);
+    border: 1px solid var(--border-color);
+    padding: 8px 15px;
+    border-radius: 999px;
+    font-size: 0.88rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+
+  .filter-tab.active {
+    background: var(--primary-mid);
+    color: #ffffff;
+    border-color: var(--primary-mid);
+    box-shadow: 0 4px 12px rgba(29, 78, 216, 0.3);
+  }
+
+  .search-input {
+    padding: 9px 14px;
+    border-radius: 999px;
+    border: 1px solid var(--border-color);
+    background: var(--card-bg);
+    color: var(--text-main);
+    font-size: 0.88rem;
+    min-width: 240px;
+    outline: none;
+  }
+
+  /* Bookshelf Grid */
+  .bookshelf-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 15px;
+    margin-top: 15px;
+  }
+
+  .note-card {
+    background: var(--card-bg);
+    border-radius: 16px;
+    padding: 16px;
+    border: 2px solid var(--border-color);
+    box-shadow: var(--shadow-md);
+    transition: all 0.22s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .note-card:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-lg);
+    border-color: var(--primary-light);
+  }
+
+  .note-card.active-reading {
+    border-color: var(--accent);
+    box-shadow: 0 0 0 3px rgba(249, 115, 22, 0.2);
+  }
+
+  .note-card.read-done {
+    border-color: var(--success);
+    background: linear-gradient(to bottom right, var(--card-bg), rgba(22, 163, 74, 0.06));
+  }
+
+  .nc-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 8px;
+  }
+
+  .nc-cat-badge {
+    font-size: 0.75rem;
+    font-weight: 800;
+    padding: 3px 10px;
+    border-radius: 999px;
+  }
+
+  .cat-chem { background: #dbeafe; color: #1e40af; }
+  .cat-bio { background: #dcfce7; color: #166534; }
+  .cat-phy { background: #fef3c7; color: #92400e; }
+
+  .nc-type-badge {
+    font-size: 0.72rem;
+    font-weight: 700;
+    padding: 2px 8px;
+    border-radius: 6px;
+    background: rgba(124, 58, 237, 0.12);
+    color: #7c3aed;
+  }
+
+  body.dark-mode .nc-type-badge {
+    color: #c4b5fd;
+  }
+
+  .nc-title {
+    font-size: 1.1rem;
+    font-weight: 800;
+    color: var(--text-main);
+    line-height: 1.35;
+    margin-bottom: 6px;
+  }
+
+  .nc-summary {
+    font-size: 0.83rem;
+    color: var(--text-muted);
+    background: var(--bg-main);
+    padding: 8px 10px;
+    border-radius: 10px;
+    margin-bottom: 12px;
+    border-left: 3px solid var(--primary-light);
+  }
+
+  .nc-btn-group {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+    margin-top: auto;
+  }
+
+  .nc-row {
+    display: flex;
+    gap: 6px;
+  }
+
+  .nc-btn {
+    flex: 1;
+    padding: 8px 10px;
+    border-radius: 10px;
+    font-size: 0.79rem;
+    font-weight: 700;
+    border: 1px solid var(--border-color);
+    background: var(--bg-main);
+    color: var(--text-main);
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    text-decoration: none;
+    transition: all 0.2s;
+  }
+
+  .nc-btn.btn-notes {
+    background: var(--primary-mid);
+    color: #fff;
+    border-color: var(--primary-mid);
+  }
+
+  .nc-btn.btn-notes.active-btn {
+    background: var(--accent);
+    border-color: var(--accent);
+  }
+
+  .nc-btn.btn-qa {
+    background: rgba(124, 58, 237, 0.12);
+    color: #6d28d9;
+    border-color: rgba(124, 58, 237, 0.3);
+  }
+  body.dark-mode .nc-btn.btn-qa {
+    color: #ddd6fe;
+  }
+
+  .nc-btn.btn-tick.is-done {
+    background: var(--success);
+    color: #fff;
+    border-color: var(--success);
+  }
+
+  /* Footer */
+  .footer-card {
+    margin-top: 26px;
+    background: var(--header-grad);
+    color: #fff;
+    border-radius: 18px;
+    padding: 18px 22px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    box-shadow: var(--shadow-md);
+  }
+
+  .wa-btn {
+    background: #25D366;
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 18px;
+    border-radius: 999px;
+    font-weight: 800;
+    font-size: 0.9rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  }
+
+  .confetti-piece {
+    position: fixed;
+    width: 10px;
+    height: 10px;
+    top: -10px;
+    z-index: 9999;
+    pointer-events: none;
+    animation: fall 2.5s linear forwards;
+  }
+
+  @keyframes fall {
+    to {
+      transform: translateY(100vh) rotate(720deg);
+      opacity: 0;
+    }
+  }
+</style>
+</head>
+<body>
+
+<div class="app-container">
+  <!-- Header -->
+  <header class="top-header">
+    <div class="brand-left">
+      <div class="owl-logo" title="Gyanu AI By Rishi Sir">🦉</div>
+      <div class="brand-titles">
+        <h1>ज्ञानू AI स्मार्ट ई-लाइब्रेरी एवं रंगीन PDF नोट्स</h1>
+        <p>RBSE कक्षा 10 विज्ञान — संपूर्ण 13 अध्याय HD शॉर्ट नोट्स व प्रश्नोत्तर बैंक PDF</p>
+        <span class="creator-pill">✨ छोटे-छोटे नोट्स, बड़ी सफलता! — आपके ऋषि सर द्वारा तैयार</span>
+      </div>
+    </div>
+    <div class="header-actions">
+      <a href="https://drive.google.com/drive/folders/15IGZYMUIYnu-aPS3h8wHOzmFKtI1WQJE" target="_blank" class="action-btn">📂 मास्टर नोट्स फ़ोल्डर</a>
+      <button class="action-btn" onclick="toggleDarkMode()" id="themeBtn">🌙 नाइट मोड</button>
+      <button class="action-btn" onclick="resetProgress()">🔄 रीसेट</button>
+    </div>
+  </header>
+
+  <!-- Gamified Progress Tracker -->
+  <section class="stats-dashboard">
+    <div class="stats-top-row">
+      <div class="stat-badges">
+        <span class="stat-chip chip-total">📚 कुल अध्याय: <strong id="statTotal">13</strong></span>
+        <span class="stat-chip chip-done">✅ पढ़ लिए (Completed): <strong id="statDone">0</strong></span>
+        <span class="stat-chip chip-rem">⏳ बाकी हैं: <strong id="statRem">13</strong></span>
+      </div>
+      <div style="font-size:0.82rem;font-weight:700;color:var(--text-muted);">
+        💡 किसी भी अध्याय पर क्लिक करके नीचे सीधे स्क्रीन पर PDF पढ़ें या डाउनलोड करें!
+      </div>
+    </div>
+    <div class="progress-track">
+      <div class="progress-fill" id="progressBar"></div>
+    </div>
+  </section>
+
+  <!-- Live In-App PDF Reader + 1-Minute Revision Cheat-Sheet -->
+  <section class="reader-grid">
+    <!-- Left: Smart In-App PDF Reader -->
+    <div class="pdf-viewer-card">
+      <div>
+        <div class="viewer-top-bar">
+          <span class="live-reader-badge">📖 स्मार्ट इन-ऐप PDF रीडर</span>
+          <div class="doc-mode-tabs">
+            <button class="doc-mode-btn active" id="modeNotesBtn" onclick="switchDocMode('notes')">🎨 रंगीन स्मार्ट नोट्स PDF</button>
+            <button class="doc-mode-btn" id="modeQaBtn" onclick="switchDocMode('qa')">🏆 संपूर्ण प्रश्नोत्तर व PYQ PDF</button>
+          </div>
+        </div>
+
+        <div class="viewer-title-area">
+          <div class="viewer-ch-tag" id="viewerChTag">अध्याय 1 • रसायन विज्ञान</div>
+          <h2 class="viewer-main-title" id="viewerTitle">अध्याय 1: रासायनिक अभिक्रियाएँ एवं समीकरण</h2>
+        </div>
+
+        <div class="pdf-frame-container">
+          <iframe id="pdfIframe" class="pdf-iframe" src="https://drive.google.com/file/d/19K-Z_j8YRGDPfsexGZ8uEYm1G1nldNWg/preview" allow="autoplay"></iframe>
+        </div>
+      </div>
+
+      <div class="viewer-controls">
+        <button class="v-btn btn-mark-read" id="mainDoneBtn" onclick="markCurrentRead()">✅ पढ़ लिया टिक करें</button>
+        <a id="mainFullLink" href="https://drive.google.com/file/d/19K-Z_j8YRGDPfsexGZ8uEYm1G1nldNWg/view?usp=drivesdk" target="_blank" class="v-btn btn-full-tab">🚀 फुल-स्क्रीन में खोलें</a>
+        <a id="mainDownloadLink" href="https://drive.google.com/uc?export=download&id=19K-Z_j8YRGDPfsexGZ8uEYm1G1nldNWg" target="_blank" class="v-btn btn-dl-pdf">📥 PDF डाउनलोड करें</a>
+      </div>
+    </div>
+
+    <!-- Right: 1-Minute Chapter Cheat-Sheet -->
+    <div class="cheatsheet-card">
+      <div>
+        <div class="cs-header">
+          <h3>⚡ 1-मिनट क्विक रिवीजन (Cheat-Sheet)</h3>
+          <span class="cs-badge">🔥 बोर्ड स्पेशल</span>
+        </div>
+        <ul class="cs-list" id="csList">
+          <!-- Populated via JS -->
+        </ul>
+      </div>
+
+      <div class="cs-formula-box">
+        <div class="cs-formula-title">🧪 इस अध्याय के सबसे महत्वपूर्ण सूत्र / समीकरण:</div>
+        <div class="cs-formula-text" id="csFormula">
+          <!-- Populated via JS -->
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Filter & Search Bar -->
+  <section class="library-controls">
+    <div class="filter-tabs">
+      <button class="filter-tab active" onclick="filterNotes('all', this)">📚 सभी 13 पाठ</button>
+      <button class="filter-tab" onclick="filterNotes('chem', this)">🧪 रसायन (Ch 1–4)</button>
+      <button class="filter-tab" onclick="filterNotes('bio', this)">🧬 जीव विज्ञान (Ch 5–8, 13)</button>
+      <button class="filter-tab" onclick="filterNotes('phy', this)">⚡ भौतिकी (Ch 9–12)</button>
+    </div>
+    <input type="text" class="search-input" id="searchInput" placeholder="🔍 अध्याय या टॉपिक खोजें..." oninput="renderBookshelf()">
+  </section>
+
+  <!-- 13 Chapters Bookshelf Grid -->
+  <section class="bookshelf-grid" id="bookshelfGrid">
+    <!-- Rendered via JS -->
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer-card">
+    <div>
+      <h3 style="font-size:1.1rem;font-weight:800;">🦉 GYANU AI By Rishi Sir — Study Smart... Score High...</h3>
+      <p style="font-size:0.86rem;opacity:0.92;">छोटे-छोटे रंगीन नोट्स और पिछले 3 वर्षों के बोर्ड प्रश्नोत्तर एक ही क्लिक में!</p>
+    </div>
+    <a href="https://wa.me/919251477188?text=%E0%A4%A8%E0%A4%AE%E0%A4%B8%E0%A5%8D%E0%A4%A4%E0%A5%87%20%E0%A4%8B%E0%A4%B7%E0%A4%BF%20%E0%A4%B8%E0%A4%B0%2C%20%E0%A4%AE%E0%A5%88%E0%A4%82%20%E0%A4%95%E0%A4%95%E0%A5%8D%E0%A4%B7%E0%A4%BE%2010%20%E0%A4%B5%E0%A4%BF%E0%A4%9C%E0%A5%8D%E0%A4%9E%E0%A4%BE%E0%A4%A8%20%E0%A4%95%E0%A5%87%20PDF%20%E0%A4%A8%E0%A5%8B%E0%A4%9F%E0%A5%8D%E0%A4%B8%20%E0%A4%AA%E0%A4%A2%E0%A4%BC%20%E0%A4%B0%E0%A4%B9%E0%A4%BE%20%E0%A4%B9%E0%A5%82%E0%A4%81!" target="_blank" class="wa-btn">
+      📲 ऋषि सर WhatsApp सहायता: 9251477188
+    </a>
+  </footer>
+</div>
+
+<script>
+const notesData = [
+  {
+    ch: 1,
+    cat: 'chem',
+    catLabel: '🧪 रसायन विज्ञान',
+    title: 'अध्याय 1: रासायनिक अभिक्रियाएँ एवं समीकरण',
+    hasColorNotes: true,
+    notesId: '19K-Z_j8YRGDPfsexGZ8uEYm1G1nldNWg',
+    qaId: '1tD2sQ_wU7tPqY6Z8vN5mK3rL9xJ1bC4e',
+    notesBadge: '🎨 रंगीन HD शॉर्ट नोट्स + PYQ',
+    summary: 'रासायनिक परिवर्तन, संतुलित समीकरण, संयोजन, वियोजन, विस्थापन, द्विविस्थापन, रेडॉक्स, संक्षारण व विकृतगंधिता।',
+    points: [
+      'अभिक्रिया के 4 संकेत: अवस्था परिवर्तन, रंग परिवर्तन, गैस का उत्सर्जन और तापमान में परिवर्तन।',
+      'संयोजन (CaO + H₂O), वियोजन (ऊष्मीय, वैद्युत, प्रकाशीय - 2AgCl), विस्थापन व द्विविस्थापन (अवक्षेपण)।',
+      'उपचयन (O₂ का जुड़ना) व अपचयन (O₂ का हटना) = रेडॉक्स अभिक्रिया; संक्षारण व विकृतगंधिता (N₂ गैस)।'
+    ],
+    formula: '2Mg + O₂ → 2MgO | CaO + H₂O → Ca(OH)₂ + ऊष्मा | BaCl₂ + Na₂SO₄ → BaSO₄↓ (श्वेत अवक्षेप) + 2NaCl'
+  },
+  {
+    ch: 2,
+    cat: 'chem',
+    catLabel: '🧪 रसायन विज्ञान',
+    title: 'अध्याय 2: अम्ल, क्षारक एवं लवण',
+    hasColorNotes: true,
+    notesId: '1GU3jxwfWa_VcOOsn5MTM0Dwgvf8AyLH8',
+    qaId: '1pJfsIXkoVG-KnTlIhg3L3NMIvnv3aQ7B',
+    notesBadge: '🎨 रंगीन HD शॉर्ट नोट्स + PYQ',
+    summary: 'प्राकृतिक व संश्लेषित सूचक, अम्ल-क्षारक रासायनिक गुण, pH स्केल और 5 प्रमुख लवण (POP, बेकिंग व धोने का सोडा)।',
+    points: [
+      'अम्ल नीले लिटमस को लाल और क्षारक लाल को नीला करते हैं; गंधीय सूचक: प्याज, वैनिला व लौंग का तेल।',
+      'धातु + अम्ल → लवण + H₂ गैस (पॉप ध्वनि); उदासीनीकरण: अम्ल + क्षारक → लवण + जल।',
+      'महत्वपूर्ण लवण: विरंजक चूर्ण, बेकिंग सोडा, धोने का सोडा, और प्लास्टर ऑफ पेरिस (POP)।'
+    ],
+    formula: 'विरंजक चूर्ण: CaOCl₂ | बेकिंग सोडा: NaHCO₃ | धोने का सोडा: Na₂CO₃·10H₂O | POP: CaSO₄·½H₂O'
+  },
+  {
+    ch: 3,
+    cat: 'chem',
+    catLabel: '🧪 रसायन विज्ञान',
+    title: 'अध्याय 3: धातु एवं अधातु',
+    hasColorNotes: true,
+    notesId: '1fy3pEtxNTUcyB6DF9Vqezz2Lij1UCtox',
+    qaId: '1I0A6Hs_FTOZiJx-IwkyzwdZc3LuXdUpK',
+    notesBadge: '🎨 रंगीन HD शॉर्ट नोट्स + PYQ',
+    summary: 'आघातवर्ध्यता, तन्यता, अपवाद, उभयधर्मी ऑक्साइड, सक्रियता श्रेणी, आयनिक यौगिक, भर्जन-निस्तापन व थर्मिट अभिक्रिया।',
+    points: [
+      'अपवाद: पारा (Hg) द्रव धातु; ब्रोमीन (Br) द्रव अधातु; सोडियम/पोटैशियम चाकू से कटने वाली धातुएँ; ग्रेफाइट विद्युत सुचालक।',
+      'उभयधर्मी ऑक्साइड (Al₂O₃ तथा ZnO) अम्ल व क्षारक दोनों से क्रिया कर लवण व जल बनाते हैं।',
+      'भर्जन (सल्फाइड अयस्क को वायु में गर्म करना) व निस्तापन (कार्बोनेट अयस्क को सीमित वायु में गर्म करना)।'
+    ],
+    formula: 'थर्मिट अभिक्रिया (रेलवे ट्रैक जोड़ना): Fe₂O₃(s) + 2Al(s) → 2Fe(l) + Al₂O₃(s) + ऊष्मा'
+  },
+  {
+    ch: 4,
+    cat: 'chem',
+    catLabel: '🧪 रसायन विज्ञान',
+    title: 'अध्याय 4: कार्बन एवं उसके यौगिक',
+    hasColorNotes: true,
+    notesId: '1Lkukvl92eCZYB4pi2FIl6TGFc13jeQr8',
+    qaId: '1L4QyZsF_g1TtL2PC2Kgegy90t8gq787P',
+    notesBadge: '🎨 रंगीन HD शॉर्ट नोट्स + PYQ',
+    summary: 'सहसंयोजी आबंध, शृंखलन, चतुःसंयोजकता, संतृप्त व असंतृप्त हाइड्रोकार्बन, प्रकार्यात्मक समूह, एस्टरीकरण व मिसेल।',
+    points: [
+      'कार्बन की सर्वतोमुखी प्रकृति के 2 कारण: शृंखलन (Catenation) तथा चतुःसंयोजकता (Tetravalency = 4)।',
+      'समजातीय श्रेणी में दो क्रमागत सदस्यों के बीच -CH₂- इकाई और 14 u परमाणु द्रव्यमान का अंतर होता है।',
+      'एस्टरीकरण (मीठी फलों जैसी गंध), साबुनीकरण, हाइड्रोजनीकरण (Ni उत्प्रेरक) और साबुन की मिसेल संरचना।'
+    ],
+    formula: 'एल्केन: CₙH₂ₙ₊₂ | एल्कीन: CₙH₂ₙ | एल्काइन: CₙH₂ₙ₋₂ | CH₃COOH + C₂H₅OH → CH₃COOC₂H₅ + H₂O'
+  },
+  {
+    ch: 5,
+    cat: 'bio',
+    catLabel: '🧬 जीव विज्ञान',
+    title: 'अध्याय 5: जैव प्रक्रम',
+    hasColorNotes: true,
+    notesId: '1wVic95wYfdODa0dgvFZfsfCV5dHR4O-i',
+    qaId: '1zkxUkw4w_qZy9GWuVwHYdf9RtpV8_mXV',
+    notesBadge: '🎨 रंगीन HD शॉर्ट नोट्स + PYQ',
+    summary: 'पोषण, प्रकाश-संश्लेषण, मानव पाचन तंत्र, श्वसन के 3 पथ, मानव हृदय में दोहरा परिसंचरण एवं वृक्काणु (नेफ्रॉन)।',
+    points: [
+      'आमाशय में HCl पेप्सिन को सक्रिय करता है; क्षुद्रांत्र के दीर्घरोम (Villi) अवशोषण का पृष्ठीय क्षेत्रफल बढ़ाते हैं।',
+      'ग्लूकोज विखंडन: यीस्ट में किण्वन (एथेनॉल+CO₂), पेशी कोशिका में (लैक्टिक अम्ल), माइटोकॉन्ड्रिया में (CO₂+H₂O+38 ATP)।',
+      'जाइलम जल का एकदिशीय वहन और फ्लोएम भोजन का द्विदिशीय स्थानांतरण करता है; नेफ्रॉन वृक्क की निस्यंदन इकाई है।'
+    ],
+    formula: 'प्रकाश-संश्लेषण: 6CO₂ + 12H₂O (सूर्य का प्रकाश / क्लोरोफिल) → C₆H₁₂O₆ + 6O₂ + 6H₂O'
+  },
+  {
+    ch: 6,
+    cat: 'bio',
+    catLabel: '🧬 जीव विज्ञान',
+    title: 'अध्याय 6: नियंत्रण एवं समन्वय',
+    hasColorNotes: true,
+    notesId: '1Ky1AGpV4X_5RSrLe3O6opoov4M3yeOJT',
+    qaId: '1KLAWy4_xeKOSSVzjyaR93bb1q8Od6H-d',
+    notesBadge: '🎨 रंगीन HD शॉर्ट नोट्स + PYQ',
+    summary: 'न्यूरॉन संरचना, सिनेप्स, प्रतिवर्ती चाप, मानव मस्तिष्क के भाग, पादप हॉर्मोन व अंतःस्रावी ग्रंथियाँ।',
+    points: [
+      'प्रतिवर्ती क्रिया का नियंत्रण मेरुरज्जु (Spinal cord) द्वारा होता है; दो न्यूरॉन के मध्य रिक्त स्थान को सिनेप्स कहते हैं।',
+      'अग्रमस्तिष्क सोचने का मुख्य भाग है; पश्चमस्तिष्क का अनुमस्तिष्क (Cerebellum) शरीर का संतुलन बनाए रखता है।',
+      'पादप हॉर्मोन: ऑक्सिन (कोशिका लंबाई), जिब्बरेलिन (तने की वृद्धि), साइटोकाइनिन (कोशिका विभाजन), ABA (वृद्धि संदमन)।'
+    ],
+    formula: 'थायरॉइड: थायरॉक्सिन (आयोडीन) | अग्न्याशय: इंसुलिन (शर्करा नियंत्रण) | अधिवृक्क: एड्रीनलीन (लड़ो या भागो)'
+  },
+  {
+    ch: 7,
+    cat: 'bio',
+    catLabel: '🧬 जीव विज्ञान',
+    title: 'अध्याय 7: जीव जनन कैसे करते हैं?',
+    hasColorNotes: true,
+    notesId: '1gPILWh10xmfOFTWskqOjiy1Vo-rMalXL',
+    qaId: '1CToTwDtaIIGbDtxlz3uwlz8Nub7z1yun',
+    notesBadge: '🎨 रंगीन HD शॉर्ट नोट्स + PYQ',
+    summary: 'DNA प्रतिकृति, अलैंगिक जनन की 6 विधियाँ, पुष्प में लैंगिक जनन, नर व मादा जनन तंत्र तथा प्लेसेंटा।',
+    points: [
+      'अलैंगिक जनन: द्विखंडन (अमीबा), बहुखंडन (प्लैज्मोडियम), मुकुलन (यीस्ट, हाइड्रा), पुनरुद्भवन (प्लेनेरिया), कायिक प्रवर्धन।',
+      'परागण के बाद निषेचन से युग्मनज (Zygote) बनता है; बीजांड से बीज तथा अंडाशय से फल विकसित होता है।',
+      'माँ के रुधिर से भ्रूण को पोषण प्लेसेंटा (अपरा) नामक तश्तरीनुमा संरचना द्वारा प्राप्त होता है।'
+    ],
+    formula: 'पुंकेसर (नर भाग) = परागकोश + तंतु | स्त्रीकेसर (मादा भाग) = वर्तिकाग्र + वर्तिका + अंडाशय'
+  },
+  {
+    ch: 8,
+    cat: 'bio',
+    catLabel: '🧬 जीव विज्ञान',
+    title: 'अध्याय 8: आनुवंशिकता',
+    hasColorNotes: true,
+    notesId: '14Dl9mnOIkcr3GqTQAb0QQuM7t_VoxYa2',
+    qaId: '1Fk1eOwgbMvzomJTQTmMztWsweGTut51O',
+    notesBadge: '🎨 रंगीन HD शॉर्ट नोट्स + PYQ',
+    summary: 'विभिन्नताओं का संचयन, ग्रेगर जॉन मेंडल के मटर प्रयोग, प्रभाविता व स्वतंत्र अपव्यूहन नियम तथा मानव में लिंग निर्धारण।',
+    points: [
+      'ग्रेगर जॉन मेंडल (आनुवंशिकी के जनक) ने मटर (Pisum sativum) के 7 जोड़ी विपर्यासी लक्षणों पर प्रयोग किए।',
+      'एकसंकर क्रॉस (TT × tt) में F₁ में सभी लंबे (Tt) और F₂ पीढ़ी में 3:1 का लक्षण अनुपात प्राप्त होता है।',
+      'मानव में 23 जोड़े गुणसूत्र होते हैं; पिता से X मिलने पर लड़की (XX) और Y मिलने पर लड़का (XY) होता है।'
+    ],
+    formula: 'एकसंकर F₂ जीनप्रारूप = 1:2:1 (TT:Tt:tt) | द्विसंकर F₂ लक्षण अनुपात = 9:3:3:1'
+  },
+  {
+    ch: 9,
+    cat: 'phy',
+    catLabel: '⚡ भौतिक विज्ञान',
+    title: 'अध्याय 9: प्रकाश – परावर्तन तथा अपवर्तन',
+    hasColorNotes: false,
+    notesId: '1hz5ml02oR1O5XcNFeKO9q3e-vWYNmHkJ',
+    qaId: '1hz5ml02oR1O5XcNFeKO9q3e-vWYNmHkJ',
+    notesBadge: '📘 मास्टर रिवीजन व प्रश्नोत्तर PDF',
+    summary: 'गोलीय दर्पण व लेंस से प्रतिबिंब निर्माण, स्नेल का नियम, अपवर्तनांक, दर्पण-लेंस सूत्र व लेंस क्षमता (डाइऑप्टर)।',
+    points: [
+      'वाहनों के पश्च-दृश्य (Rear-view) में उत्तल दर्पण लगता है क्योंकि यह सदैव सीधा व विस्तृत दृष्टि-क्षेत्र वाला प्रतिबिंब बनाता है।',
+      'अवतल दर्पण का उपयोग: टॉर्च, सर्चलाइट, वाहनों की हेडलाइट, दंत चिकित्सक और सौर भट्ठियों में।',
+      'हीरे का अपवर्तनांक सर्वाधिक (2.42) होता है; 1 डाइऑप्टर उस लेंस की क्षमता है जिसकी फोकस दूरी 1 मीटर हो।'
+    ],
+    formula: 'दर्पण सूत्र: 1/v + 1/u = 1/f | लेंस सूत्र: 1/v - 1/u = 1/f | क्षमता P = 1/f (m में) | n = sin i / sin r'
+  },
+  {
+    ch: 10,
+    cat: 'phy',
+    catLabel: '⚡ भौतिक विज्ञान',
+    title: 'अध्याय 10: मानव नेत्र तथा रंग-बिरंगा संसार',
+    hasColorNotes: false,
+    notesId: '1oPmtIux8wKgYTbeEzXMViJevteQTdIG1',
+    qaId: '1oPmtIux8wKgYTbeEzXMViJevteQTdIG1',
+    notesBadge: '📘 मास्टर रिवीजन व प्रश्नोत्तर PDF',
+    summary: 'मानव नेत्र व समंजन क्षमता, निकट व दूर दृष्टि दोष, प्रिज्म से वर्ण-विक्षेपण, इंद्रधनुष, तारों का टिमटिमाना व प्रकीर्णन।',
+    points: [
+      'सामान्य नेत्र के लिए स्पष्ट दर्शन की अल्पतम दूरी (निकट बिंदु) 25 cm तथा दूर बिंदु अनंत (∞) होता है।',
+      'निकट-दृष्टि दोष के निवारण हेतु अवतल लेंस और दीर्घ-दृष्टि दोष के निवारण हेतु उत्तल लेंस प्रयुक्त होता है।',
+      'तारों का टिमटिमाना वायुमंडलीय अपवर्तन के कारण तथा स्वच्छ आकाश का नीला रंग प्रकाश के प्रकीर्णन के कारण होता है।'
+    ],
+    formula: 'प्रिज्म वर्ण-विक्षेपण क्रम: VIBGYOR (बैंगनी का विचलन सर्वाधिक, लाल का विचलन न्यूनतम)'
+  },
+  {
+    ch: 11,
+    cat: 'phy',
+    catLabel: '⚡ भौतिक विज्ञान',
+    title: 'अध्याय 11: विद्युत',
+    hasColorNotes: false,
+    notesId: '12Vi57wfU0MLD0See3VldAluinJ_cP8Hv',
+    qaId: '12Vi57wfU0MLD0See3VldAluinJ_cP8Hv',
+    notesBadge: '📘 मास्टर रिवीजन व प्रश्नोत्तर PDF',
+    summary: 'विद्युत धारा, विभवांतर, ओम का नियम, प्रतिरोधकता, श्रेणीक्रम व पार्श्वक्रम संयोजन, जूल का तापन नियम व विद्युत शक्ति।',
+    points: [
+      'चालक का प्रतिरोध लंबाई के अनुक्रमानुपाती (R ∝ l) तथा अनुप्रस्थ काट क्षेत्रफल के व्युत्क्रमानुपाती (R ∝ 1/A) होता है।',
+      'घरेलू परिपथों में उपकरणों को पार्श्वक्रम (समानांतर क्रम) में जोड़ा जाता है ताकि सबको 220V समान वोल्टता मिले।',
+      'जूल का तापन नियम: H = I²Rt; बल्ब के तंतु टंगस्टन (गलनांक 3380°C) के तथा तापन अवयव नाइक्रोम के बनते हैं।'
+    ],
+    formula: 'V = IR | R_s = R₁+R₂+R₃ | 1/R_p = 1/R₁+1/R₂ | H = I²Rt | P = VI | 1 kWh = 3.6 × 10⁶ J'
+  },
+  {
+    ch: 12,
+    cat: 'phy',
+    catLabel: '⚡ भौतिक विज्ञान',
+    title: 'अध्याय 12: विद्युत धारा के चुंबकीय प्रभाव',
+    hasColorNotes: false,
+    notesId: '122OlGFQUrijoDtWtjFsVJQzqfS8PkH_O',
+    qaId: '122OlGFQUrijoDtWtjFsVJQzqfS8PkH_O',
+    notesBadge: '📘 मास्टर रिवीजन व प्रश्नोत्तर PDF',
+    summary: 'चुंबकीय क्षेत्र रेखाएँ, दक्षिण-हस्त अंगुष्ठ नियम, परिनालिका (Solenoid), फ्लेमिंग का वामहस्त नियम, लघुपथन व भूसंपर्क तार।',
+    points: [
+      'चुंबकीय क्षेत्र रेखाएँ बंद वक्र होती हैं और दो क्षेत्र रेखाएँ कभी एक-दूसरे को प्रतिच्छेद नहीं करतीं।',
+      'परिनालिका के भीतर चुंबकीय क्षेत्र सभी बिंदुओं पर एकसमान होता है; इसका उपयोग नर्म लोहे से विद्युत चुंबक बनाने में होता है।',
+      'भूसंपर्क तार (हरा तार) धातु के आवरण वाले साधित्रों से विद्युत झटके से सुरक्षा करता है।'
+    ],
+    formula: 'फ्लेमिंग का वामहस्त नियम: तर्जनी = चुंबकीय क्षेत्र (B), मध्यमा = धारा (I), अंगूठा = बल/गति (F)'
+  },
+  {
+    ch: 13,
+    cat: 'bio',
+    catLabel: '🧬 जीव विज्ञान (पर्यावरण)',
+    title: 'अध्याय 13: हमारा पर्यावरण',
+    hasColorNotes: false,
+    notesId: '1ArSurs8dg2_sdndrDfagQ3l-y6e0eI4z',
+    qaId: '1ArSurs8dg2_sdndrDfagQ3l-y6e0eI4z',
+    notesBadge: '📘 मास्टर रिवीजन व प्रश्नोत्तर PDF',
+    summary: 'पारितंत्र, आहार श्रृंखला व पोषी स्तर, 10% ऊर्जा प्रवाह नियम, जैव आवर्धन, ओज़ोन परत अपक्षय व कचरा प्रबंधन।',
+    points: [
+      'आहार श्रृंखला में एक पोषी स्तर से अगले पोषी स्तर में केवल 10% ऊर्जा का स्थानांतरण होता है (लिंडमान का 10% नियम)।',
+      'अजैव-निम्नीकरणीय रसायनों (जैसे DDT) का प्रत्येक पोषी स्तर पर संचयन जैव आवर्धन (Biological Magnification) कहलाता है।',
+      'समताप मंडल में ओज़ोन परत (O₃) सूर्य की हानिकारक पराबैंगनी (UV) विकिरणों से पृथ्वी की रक्षा करती है; CFCs इसे क्षति पहुँचाते हैं।'
+    ],
+    formula: 'आहार श्रृंखला: उत्पादक (घास) → प्राथमिक उपभोक्ता (टिड्डा) → द्वितीयक (मेंढक) → तृतीयक (साँप)'
+  }
+];
+
+// Clean fallback ID for Chapter 1 QA if needed
+notesData[0].qaId = '19K-Z_j8YRGDPfsexGZ8uEYm1G1nldNWg';
+
+let currentCh = 1;
+let currentDocMode = 'notes'; // 'notes' or 'qa'
+let currentFilter = 'all';
+let readChapters = JSON.parse(localStorage.getItem('gyanu_sci10_notes_read') || '[]');
+
+function initLibrary() {
+  if (localStorage.getItem('gyanu_sci10_notes_dark') === 'true') {
+    document.body.classList.add('dark-mode');
+    document.getElementById('themeBtn').innerHTML = '☀️ लाइट मोड';
+  }
+  openChapterInViewer(1, 'notes', false);
+  updateStats();
+  renderBookshelf();
+}
+
+function openChapterInViewer(chNum, mode = 'notes', scrollToViewer = true) {
+  currentCh = chNum;
+  currentDocMode = mode;
+  const item = notesData.find(x => x.ch === chNum);
+  if (!item) return;
+
+  const activeFileId = (mode === 'qa') ? item.qaId : item.notesId;
+
+  document.getElementById('modeNotesBtn').classList.toggle('active', mode === 'notes');
+  document.getElementById('modeQaBtn').classList.toggle('active', mode === 'qa');
+
+  const docTypeLabel = mode === 'qa' ? 'संपूर्ण प्रश्नोत्तर व PYQ बैंक PDF' : item.notesBadge;
+  document.getElementById('viewerChTag').textContent = `अध्याय ${item.ch} • ${item.catLabel} • ${docTypeLabel}`;
+  document.getElementById('viewerTitle').textContent = item.title;
+
+  const previewUrl = `https://drive.google.com/file/d/${activeFileId}/preview`;
+  const viewUrl = `https://drive.google.com/file/d/${activeFileId}/view?usp=drivesdk`;
+  const dlUrl = `https://drive.google.com/uc?export=download&id=${activeFileId}`;
+
+  document.getElementById('pdfIframe').src = previewUrl;
+  document.getElementById('mainFullLink').href = viewUrl;
+  document.getElementById('mainDownloadLink').href = dlUrl;
+
+  // Populate 1-Minute Cheat-Sheet
+  document.getElementById('csList').innerHTML = item.points.map(p => `<li>${p}</li>`).join('');
+  document.getElementById('csFormula').textContent = item.formula;
+
+  updateMainDoneBtn();
+  renderBookshelf();
+
+  if (scrollToViewer) {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+}
+
+function switchDocMode(mode) {
+  openChapterInViewer(currentCh, mode, false);
+}
+
+function updateMainDoneBtn() {
+  const btn = document.getElementById('mainDoneBtn');
+  const isDone = readChapters.includes(currentCh);
+  if (isDone) {
+    btn.innerHTML = '🎉 पढ़ लिया (Completed)';
+    btn.style.background = '#16a34a';
+  } else {
+    btn.innerHTML = '✅ पढ़ लिया टिक करें';
+    btn.style.background = '#f97316';
+  }
+}
+
+function toggleReadStatus(chNum, event) {
+  if (event) event.stopPropagation();
+  const idx = readChapters.indexOf(chNum);
+  if (idx > -1) {
+    readChapters.splice(idx, 1);
+  } else {
+    readChapters.push(chNum);
+    launchConfetti();
+  }
+  localStorage.setItem('gyanu_sci10_notes_read', JSON.stringify(readChapters));
+  updateStats();
+  updateMainDoneBtn();
+  renderBookshelf();
+}
+
+function markCurrentRead() {
+  toggleReadStatus(currentCh);
+}
+
+function updateStats() {
+  const total = notesData.length;
+  const done = readChapters.length;
+  const rem = total - done;
+  const pct = Math.round((done / total) * 100);
+
+  document.getElementById('statTotal').textContent = total;
+  document.getElementById('statDone').textContent = done;
+  document.getElementById('statRem').textContent = rem;
+  document.getElementById('progressBar').style.width = pct + '%';
+}
+
+function filterNotes(cat, btnEl) {
+  currentFilter = cat;
+  document.querySelectorAll('.filter-tab').forEach(b => b.classList.remove('active'));
+  btnEl.classList.add('active');
+  renderBookshelf();
+}
+
+function renderBookshelf() {
+  const grid = document.getElementById('bookshelfGrid');
+  const q = (document.getElementById('searchInput').value || '').trim().toLowerCase();
+
+  const filtered = notesData.filter(item => {
+    const matchCat = currentFilter === 'all' || item.cat === currentFilter;
+    const matchSearch = !q || item.title.toLowerCase().includes(q) || item.summary.toLowerCase().includes(q) || item.points.join(' ').toLowerCase().includes(q);
+    return matchCat && matchSearch;
+  });
+
+  grid.innerHTML = filtered.map(item => {
+    const isReading = item.ch === currentCh;
+    const isDone = readChapters.includes(item.ch);
+    const catClass = item.cat === 'chem' ? 'cat-chem' : (item.cat === 'bio' ? 'cat-bio' : 'cat-phy');
+    const dlUrl = `https://drive.google.com/uc?export=download&id=${item.notesId}`;
+    const viewUrl = `https://drive.google.com/file/d/${item.notesId}/view?usp=drivesdk`;
+    const waText = encodeURIComponent(`📄 *GYANU AI By Rishi Sir* - कक्षा 10 विज्ञान स्मार्ट PDF नोट्स
+*${item.title}*
+यहाँ से पढ़ें/डाउनलोड करें: ${viewUrl}`);
+
+    return `
+      <div class="note-card ${isReading ? 'active-reading' : ''} ${isDone ? 'read-done' : ''}">
+        <div>
+          <div class="nc-top">
+            <span class="nc-cat-badge ${catClass}">${item.catLabel}</span>
+            <span class="nc-type-badge">${item.notesBadge}</span>
+          </div>
+          <div class="nc-title">${item.title}</div>
+          <div class="nc-summary">📌 ${item.summary}</div>
+        </div>
+        <div class="nc-btn-group">
+          <div class="nc-row">
+            <button class="nc-btn btn-notes ${isReading && currentDocMode === 'notes' ? 'active-btn' : ''}" onclick="openChapterInViewer(${item.ch}, 'notes', true)">
+              👁️ नोट्स पढ़ें
+            </button>
+            <button class="nc-btn btn-qa ${isReading && currentDocMode === 'qa' ? 'active-btn' : ''}" onclick="openChapterInViewer(${item.ch}, 'qa', true)">
+              🏆 प्रश्नोत्तर व PYQ PDF
+            </button>
+          </div>
+          <div class="nc-row">
+            <a href="${dlUrl}" target="_blank" class="nc-btn" title="सीधे PDF डाउनलोड करें">
+              📥 डाउनलोड
+            </a>
+            <button class="nc-btn btn-tick ${isDone ? 'is-done' : ''}" onclick="toggleReadStatus(${item.ch}, event)">
+              ${isDone ? '✅ पढ़ लिया' : '☑️ टिक करें'}
+            </button>
+            <a href="https://wa.me/?text=${waText}" target="_blank" class="nc-btn" title="WhatsApp पर शेयर करें">
+              📲 शेयर
+            </a>
+          </div>
+        </div>
+      </div>
+    `;
+  }).join('');
+}
+
+function toggleDarkMode() {
+  document.body.classList.toggle('dark-mode');
+  const isDark = document.body.classList.contains('dark-mode');
+  localStorage.setItem('gyanu_sci10_notes_dark', isDark);
+  document.getElementById('themeBtn').innerHTML = isDark ? '☀️ लाइट मोड' : '🌙 नाइट मोड';
+}
+
+function resetProgress() {
+  if (confirm('क्या आप वाकई सभी 13 अध्यायों की रीडिंग प्रोग्रेस को रीसेट करना चाहते हैं?')) {
+    readChapters = [];
+    localStorage.removeItem('gyanu_sci10_notes_read');
+    updateStats();
+    updateMainDoneBtn();
+    renderBookshelf();
+  }
+}
+
+function launchConfetti() {
+  const colors = ['#f97316', '#2563eb', '#16a34a', '#eab308', '#ec4899'];
+  for (let i = 0; i < 28; i++) {
+    const el = document.createElement('div');
+    el.className = 'confetti-piece';
+    el.style.left = Math.random() * 100 + 'vw';
+    el.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+    el.style.animationDuration = (1.5 + Math.random() * 1.5) + 's';
+    document.body.appendChild(el);
+    setTimeout(() => el.remove(), 3000);
+  }
+}
+
+window.addEventListener('DOMContentLoaded', initLibrary);
+</script>
+</body>
+</html>
